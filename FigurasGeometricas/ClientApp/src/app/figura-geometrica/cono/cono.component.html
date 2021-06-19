@@ -1,0 +1,38 @@
+
+<div class="container">
+
+  
+
+
+  <div class="row">
+    <div class="col-6"> <img src="assets/imagen/area_volumen_geometricos.jpg" alt="First slide"></div>
+    <div class="col-6">
+      <div class="row">
+        <div class="example-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Radio</mat-label>
+            <input matInput placeholder="3.5" [formControl]="radio" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+
+        </div>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="fill">
+          <mat-label>Altura</mat-label>
+          <input matInput placeholder="3.5" [formControl]="altura" required>
+          <mat-error *ngIf="altura.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <div class="example-button-row">
+
+        <button mat-button color="primary">Primary</button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
