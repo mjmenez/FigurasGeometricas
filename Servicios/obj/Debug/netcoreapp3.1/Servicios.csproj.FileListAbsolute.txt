@@ -1,0 +1,8 @@
+C:\evaluacion\FigurasGeometricas\Servicios\bin\Debug\netcoreapp3.1\Servicios.deps.json
+C:\evaluacion\FigurasGeometricas\Servicios\bin\Debug\netcoreapp3.1\Servicios.dll
+C:\evaluacion\FigurasGeometricas\Servicios\bin\Debug\netcoreapp3.1\Servicios.pdb
+C:\evaluacion\FigurasGeometricas\Servicios\obj\Debug\netcoreapp3.1\Servicios.AssemblyInfoInputs.cache
+C:\evaluacion\FigurasGeometricas\Servicios\obj\Debug\netcoreapp3.1\Servicios.AssemblyInfo.cs
+C:\evaluacion\FigurasGeometricas\Servicios\obj\Debug\netcoreapp3.1\Servicios.csproj.CoreCompileInputs.cache
+C:\evaluacion\FigurasGeometricas\Servicios\obj\Debug\netcoreapp3.1\Servicios.dll
+C:\evaluacion\FigurasGeometricas\Servicios\obj\Debug\netcoreapp3.1\Servicios.pdb

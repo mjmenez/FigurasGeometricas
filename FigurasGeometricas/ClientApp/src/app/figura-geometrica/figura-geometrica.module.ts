@@ -3,11 +3,23 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 //import { NgxMaskModule, IConfig } from 'ngx-mask'
-import { EmpleadosServices } from './figura-geometrica.service';
+import { FiguraGeometricaServices } from './figura-geometrica.service';
+
 import { ConoComponent } from './cono/cono.component';
 import { EsferaComponent } from './esfera/esfera.component';
+
+
 import { BrowserModule } from '@angular/platform-browser';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatNativeDateModule, MatFormFieldModule } from '@angular/material';
+
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatFormFieldModule } from '@angular/material';
+import { MatToolbarModule,  MatSidenavModule, MatNativeDateModule } from '@angular/material';
 
 //const maskConfig: Partial<IConfig> = {
 //  validation: false,
@@ -23,6 +35,14 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatIconModule,
     MatListModule,
     MatNativeDateModule, MatFormFieldModule,
+    MatFormFieldModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
     //NgxMaskModule.forRoot(maskConfig),
 
   ],
@@ -32,10 +52,10 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
   ],
   exports: [
     ConoComponent, EsferaComponent
-  ],  
+  ],
   providers: [
-    DatePipe,EmpleadosServices
+    DatePipe, FiguraGeometricaServices
   ]
 })
 export class FiguraGeometricaModule { }
- { }
+{ }

@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using System;
 
 namespace FigurasGeometricas
 {
@@ -25,10 +27,30 @@ namespace FigurasGeometricas
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            AddSwagger(services);
         }
+        private void AddSwagger(IServiceCollection services)
+        {
+            services.AddSwaggerGen(options =>
+            {
+                var groupName = "v1";
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+                options.SwaggerDoc(groupName, new OpenApiInfo
+                {
+                    Title = $"Foo {groupName}",
+                    Version = groupName,
+                    Description = "Foo API",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Foo Company",
+                        Email = string.Empty,
+                        Url = new Uri("https://foo.com/"),
+                    }
+                });
+            });
+        }
+            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -54,6 +76,13 @@ namespace FigurasGeometricas
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Foo API V1");
+            });
+
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
@@ -66,6 +95,7 @@ namespace FigurasGeometricas
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
         }
     }
 }

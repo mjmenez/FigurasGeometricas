@@ -1,38 +1,35 @@
-
 <div class="container">
-
-  
-
-
+  <h3>Para calcular área de cilindro</h3>
   <div class="row">
     <div class="col-6"> <img src="assets/imagen/area_volumen_geometricos.jpg" alt="First slide"></div>
-    <div class="col-6">
+    <div class="col-3">
       <div class="row">
-        <div class="example-container">
-          <mat-form-field appearance="fill">
-            <mat-label>Radio</mat-label>
-            <input matInput placeholder="3.5" [formControl]="radio" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        <form [formGroup]="formArea" (ngSubmit)="submit()">
+          <mat-form-field>
+            <input matInput  placeholder="radio" formControlName="radioCilindro" class="form-control" name="radioCilindro">
           </mat-form-field>
-
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="altura" formControlName="alturaCilindro" class="form-control" name="alturaCilindro">
+          </mat-form-field>
+          <br>
+          <button id="btnSubmit" mat-raised-button type="submit" color="primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="row">
+        <div class="col-sm-5 align-selft-start">
+          <label class="form-label">Área</label>
+          <input [disabled]='true' [(ngModel)]="area" matInput class="form-control" >
+        </div>
+        <div class="col-sm-5 align-selft-start">
+          <label class="form-label">Volumen</label>
+          <input [disabled]='true' [(ngModel)]="volumen" matInput class="form-control" >
         </div>
       </div>
-      <div class="row">
-        <mat-form-field appearance="fill">
-          <mat-label>Altura</mat-label>
-          <input matInput placeholder="3.5" [formControl]="altura" required>
-          <mat-error *ngIf="altura.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-
-      </div>
-
-      <div class="example-button-row">
-
-        <button mat-button color="primary">Primary</button>
-
-      </div>
-
+    </div>
+    <div>
     </div>
   </div>
 </div>
-

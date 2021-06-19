@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatInputModule  } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
@@ -37,6 +37,7 @@ import { FiguraGeometricaModule } from './figura-geometrica/figura-geometrica.mo
     MatIconModule,
     MatListModule,
     MatFormFieldModule,
+    MatInputModule ,
     //MatNativeDateModule,
    
     
