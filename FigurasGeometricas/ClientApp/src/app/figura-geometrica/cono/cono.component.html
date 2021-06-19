@@ -6,11 +6,11 @@
       <div class="row">
         <form [formGroup]="formArea" (ngSubmit)="submit()">
           <mat-form-field>
-            <input matInput  placeholder="radio" formControlName="radioCilindro" class="form-control" name="radioCilindro">
+            <input matInput mask="separator.2" placeholder="radio" formControlName="radioCilindro" class="form-control" name="radioCilindro">
           </mat-form-field>
           <br>
           <mat-form-field>
-            <input matInput placeholder="altura" formControlName="alturaCilindro" class="form-control" name="alturaCilindro">
+            <input matInput placeholder="altura" mask="separator.2" formControlName="alturaCilindro" class="form-control" name="alturaCilindro">
           </mat-form-field>
           <br>
           <button id="btnSubmit" mat-raised-button type="submit" color="primary">Submit</button>

@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-//import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { FiguraGeometricaServices } from './figura-geometrica.service';
 
 import { ConoComponent } from './cono/cono.component';
 import { EsferaComponent } from './esfera/esfera.component';
-
+import { CilindroComponent } from './cilindro/cilindro.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -21,9 +21,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material';
 import { MatToolbarModule,  MatSidenavModule, MatNativeDateModule } from '@angular/material';
 
-//const maskConfig: Partial<IConfig> = {
-//  validation: false,
-//};
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   imports: [
@@ -43,18 +43,18 @@ import { MatToolbarModule,  MatSidenavModule, MatNativeDateModule } from '@angul
     MatInputModule,
     MatListModule,
     MatMenuModule,
-    //NgxMaskModule.forRoot(maskConfig),
+    NgxMaskModule.forRoot(maskConfig),
 
   ],
   entryComponents: [ConoComponent],
   declarations: [
-    ConoComponent, EsferaComponent
+    ConoComponent, EsferaComponent, CilindroComponent,
   ],
   exports: [
-    ConoComponent, EsferaComponent
+    ConoComponent, EsferaComponent, CilindroComponent,
   ],
   providers: [
-    DatePipe, FiguraGeometricaServices
+    DatePipe, FiguraGeometricaServices,
   ]
 })
 export class FiguraGeometricaModule { }

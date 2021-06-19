@@ -1,17 +1,20 @@
-
 <div class="container">
   <h3>Para calcular área de cilindro</h3>
   <div class="row">
-    <div class="col-6"> <img src="assets/imagen/area_volumen_geometricos_esfera.jpg" alt="First slide"></div>
+    <div class="col-6"> <img src="assets/imagen/area_volumen_geometricos.jpg" alt="First slide"></div>
     <div class="col-3">
       <div class="row">
-        <form [formGroup]="formArea">
+        <form [formGroup]="formArea" >
           <mat-form-field>
             <input matInput mask="separator.2" placeholder="radio" formControlName="radioCilindro" class="form-control" name="radioCilindro">
-          </mat-form-field>         
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="altura" mask="separator.2" formControlName="alturaCilindro" class="form-control" name="alturaCilindro">
+          </mat-form-field>
           <br>
           <button id="btnSubmit" mat-raised-button (click)="calcular()" color="primary">Calcular area y volumen</button>
-          <button id="btnLimpiar" mat-raised-button (click)="onLimpiar()" color="primary">Limpiar</button>
+          <button id="btnLimpiar" mat-raised-button  (click)="onLimpiar()" color="primary">Limpiar</button>
         </form>
       </div>
     </div>

@@ -17,5 +17,17 @@ export class FiguraGeometricaServices {
     debugger;
 
     return this.http.post<any>(this.apiURL + "/volumencilindro/" + radio + "/" + altura, { radio, altura });
+  }
+
+  areaEsfera(radio: number): Observable<any> {
+    debugger;
+
+    return this.http.post<any>(this.apiURL + "/areaesfera/" + radio , { radio });
+  }
+
+  volumenEsfera(radio: number): Observable<any> {
+    debugger;
+
+    return this.http.post<any>(this.apiURL + "/volumenesfera/" + radio , { radio });
   } 
 }
