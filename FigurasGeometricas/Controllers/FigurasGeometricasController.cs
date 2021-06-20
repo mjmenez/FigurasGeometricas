@@ -16,32 +16,48 @@ namespace FigurasGeometricas.Controllers
         private  FiguraGeometrica _figura;
         public FigurasGeometricasController()
         {
-            //FiguraGeometrica figura
-            //_figura = figura;
         }
-        // GET: api/<FigurasGeometricasController>
-       
-       
-        // POST api/<FigurasGeometricasController>
+        /// <summary>
+        /// Obtiene el area de un cilindro, dado el radio y la altura
+        /// </summary>
+        /// <param name="radio"></param>
+        /// <param name="altura"></param>
+        /// <returns> regresa el area del cilindro</returns>
         [HttpPost("areacilindro/{radio:double}/{altura:double}")]
         public double AreaCilindro(double radio, double altura)
         {
            _figura = new Cilindro(radio,altura);
             return _figura.Area();
         }
+        /// <summary>
+        /// Obtiene el volumen de un cilindro, dado el radio y la altura
+        /// </summary>
+        /// <param name="radio"></param>
+        /// <param name="altura"></param>
+        /// <returns>regresa el volumen del cilindro</returns>
         [HttpPost("volumencilindro/{radio:double}/{altura:double}")]
         public double VolumenCilindro(double radio, double altura)
         {
             _figura = new Cilindro(radio, altura);
             return _figura.Volumen();
         }
-
+        /// <summary>
+        /// Obtiene el area de una esfera, dado el radio 
+        /// </summary>
+        /// <param name="radio"></param>
+        /// <returns>regresa el area de la esfera </returns>
         [HttpPost("areaesfera/{radio:double}")]
         public double AreaEsfera(double radio)
         {
             _figura = new Esfera(radio);
             return _figura.Area();
         }
+        /// <summary>
+        /// Obtiene el volumen de una esfera, dado el radio 
+        /// </summary>
+        /// <param name="radio"></param>
+        /// <param name="altura"></param>
+        /// <returns>regresa el volumen de la esfera</returns>
         [HttpPost("volumenesfera/{radio:double}")]
         public double VolumenEsfera(double radio, double altura)
         {
