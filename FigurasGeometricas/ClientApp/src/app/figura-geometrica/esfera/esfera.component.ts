@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
-import { FiguraGeometricaServices } from '../figura-geometrica.service';
+import { FormControl, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms'
 
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { FiguraGeometricaServices } from '../figura-geometrica.service';
+import { BarraLateralComponent } from '../../barra-lateral/barra-lateral.component';
 
 @Component({
   selector: 'app-esfera',
@@ -25,8 +23,7 @@ export class EsferaComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private figuraGeometricaServices: FiguraGeometricaServices,
-    private sanitizer: DomSanitizer) {
-
+    private sanitizer: DomSanitizer, private partentBarra: BarraLateralComponent) {
 
   }
 
@@ -35,6 +32,9 @@ export class EsferaComponent implements OnInit {
     this.limpiar();
   }
 
+  ngAfterViewInit() {
+    this.partentBarra.titulo = 'Esfera'
+  }
   limpiar() {
 
     this.formArea = this.formBuilder.group({
@@ -45,7 +45,6 @@ export class EsferaComponent implements OnInit {
 
   }
   calcular() {
-    debugger;
     if (this.formArea.valid) {
       this.btnCalcularAreaVolumen();
     }
@@ -53,6 +52,7 @@ export class EsferaComponent implements OnInit {
       alert("Faltan capos");
     }
   }
+
   btnCalcularAreaVolumen() {
    
     let radio: number = this.formArea.controls["radioCilindro"].value;
@@ -61,6 +61,7 @@ export class EsferaComponent implements OnInit {
 
   }
   onLimpiar() { this.limpiar(); return false; }
+
   obtenerAreaEsfera(radio: number) {
 
     this.figuraGeometricaServices.areaEsfera(radio).subscribe(data => {

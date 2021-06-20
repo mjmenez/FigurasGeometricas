@@ -46,12 +46,12 @@ const maskConfig: Partial<IConfig> = {
     NgxMaskModule.forRoot(maskConfig),
 
   ],
-  entryComponents: [ConoComponent],
+  entryComponents: [],
   declarations: [
-    ConoComponent, EsferaComponent, CilindroComponent,
+    EsferaComponent, CilindroComponent,
   ],
   exports: [
-    ConoComponent, EsferaComponent, CilindroComponent,
+    EsferaComponent, CilindroComponent,
   ],
   providers: [
     DatePipe, FiguraGeometricaServices,

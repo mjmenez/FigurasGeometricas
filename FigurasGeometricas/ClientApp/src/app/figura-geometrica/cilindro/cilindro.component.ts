@@ -1,13 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { FiguraGeometricaServices } from '../figura-geometrica.service';
 import { FormBuilder } from '@angular/forms'
-
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { BarraLateralComponent } from '../../barra-lateral/barra-lateral.component';
 
 @Component({
   selector: 'app-cilindro',
@@ -15,6 +13,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
   styleUrls: ['./cilindro.component.css']
 })
 export class CilindroComponent implements OnInit {
+
   Radio: FormControl;
   Altura: FormControl;
   area: number;
@@ -25,14 +24,17 @@ export class CilindroComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private figuraGeometricaServices: FiguraGeometricaServices,
-    private sanitizer: DomSanitizer) {
-
+    private sanitizer: DomSanitizer, private partentBarra: BarraLateralComponent) {
 
   }
 
 
   ngOnInit() {
     this.limpiar();
+  }
+
+  ngAfterViewInit() {
+    this.partentBarra.titulo='Cilindro'
   }
 
   limpiar() {
